@@ -17,7 +17,7 @@
 
 ### 方法1：下载可执行文件（推荐新手）
 
-👉 [点击下载最新版 .exe](https://github.com/你的用户名/zhipu-vision-tool/releases)
+👉 [点击下载最新版 .exe](https://github.com/spacexyqc/zhipu-vision-tool/releases/tag/1.0)
 
 > 无需安装Python，双击即可使用（仅限Windows）
 
@@ -27,4 +27,5 @@
 git clone https://github.com/你的用户名/zhipu-vision-tool.git
 cd zhipu-vision-tool
 pip install -r requirements.txt
+
 python main.py
