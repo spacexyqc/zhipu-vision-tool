@@ -3,7 +3,7 @@
 # 🧠 智谱 AI 多图分析工具 - 优化版 v3.1
 # 文件名: zhipu_vision_tool_v3.py
 # 版本: v3.1 (支持配置保存)
-# 作者: Qwen (Alibaba Cloud)
+# 作者: XYQC and Qwen (Alibaba Cloud)
 # 日期: 2025-08-20
 # ================================================
 """
@@ -370,4 +370,5 @@ if __name__ == "__main__":
     root = Tk()
     root.configure(bg=DARK_BG)
     app = ZhipuVisionTool(root)
+
     root.mainloop()
