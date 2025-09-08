@@ -1,0 +1,73 @@
+LoRA打标策略优化方案
+一、任务核心
+将图片内容分解为：
+
+核心定义句：描述主体身份与固有特征。
+
+变量标签组：描述可变的动作、环境、风格等。
+
+二、核心定义句生成 (优先级最高)
+规则：[触发词] is [主体类型] + [固有特征]
+
+触发词: 固定使用预设触发词（如 kefu_sha）。
+
+固有特征提取: 识别并锁定以下不可变属性：
+
+主要物种或角色类型: anime girl, mecha。
+
+固定物理属性: silver hair, cat ears, mismatched eyes。
+
+固定服装或配饰: mechanical overalls, a specific tattoo。
+
+核心定义句示例: kefu_sha is a silver-haired anime girl with cat ears, wearing mechanic overalls.
+
+三、可变标签组生成 (按分类提取)
+规则：提取并标注所有非核心、可变的元素，并按类别分组。
+
+外观细节:
+
+提取目标: 衣服颜色、武器种类、手持物、配饰细节等。
+
+标注格式: [颜色] [物体], holding a [物体]。
+
+示例: red armor, black gloves, holding a rifle。
+
+动作与姿态:
+
+提取目标: 主体正在进行的动作或身体姿态。
+
+标注格式: 动词 + 宾语/副词。
+
+示例: aiming a rifle, smiling, walking。
+
+环境与场景:
+
+提取目标: 图像的背景、时间、地点。
+
+标注格式: 介词短语，名词短语。
+
+示例: in a cyberpunk city, at night, in a desert。
+
+风格与材质:
+
+提取目标: 图像的艺术风格、物体材质。
+
+标注格式: [风格] style, [材质] texture。
+
+示例: oil painting style, metallic texture。
+
+四、简化与过滤规则 (黑名单机制)
+规则：在生成标签前，执行过滤操作。
+
+重复信息过滤: 如果某属性（如silver hair）已在核心定义句中，则从变量标签组中删除所有相关标签（如hair）。
+
+冗余信息过滤: 删除背景中与主体无关的物体标签，如：a tree on the left, a cloud, a car。
+
+简化表述: 将复杂的句子简化为短语。例如：the sky is orange at sunset 简化为 at sunset。
+
+五、最终标签输出格式
+规则：将核心定义句和所有变量标签按顺序组合。
+
+格式: 核心定义句, 变量标签1, 变量标签2, ...
+
+示例: kefu_sha is a silver-haired anime girl with cat ears, wearing mechanic overalls, wearing red armor, aiming a rifle, in a cyberpunk city at night.
