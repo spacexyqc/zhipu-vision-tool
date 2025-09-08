@@ -2,7 +2,7 @@
 
 一个简单易用的桌面应用，支持拖拽上传多张图片，批量调用智谱AI（ZhipuAI）的视觉模型进行分析，并自动保存结果。
 
-![截图](assets/screenshot.png)
+<img width="1036" height="916" alt="e9e237a7c5d6ba2b47be646423391ec6" src="https://github.com/user-attachments/assets/5995a7ec-d501-46d4-98ec-9c9be12ff660" />
 
 ## ✨ 功能特性
 
@@ -29,3 +29,4 @@ cd zhipu-vision-tool
 pip install -r requirements.txt
 
 python main.py
+
